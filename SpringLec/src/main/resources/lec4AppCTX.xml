@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="bmiCalculator" class="com.lec4.ex.BMICalculator">
+		<property name="lowWeight">
+			<value>18.5</value>
+		</property>
+		<property name="normal">
+			<value>23</value>
+		</property>
+		<property name="overWeight">
+			<value>25</value>
+		</property>
+		<property name="obesity">
+			<value>30</value>
+		</property>
+	</bean>
+
+	<bean id="myInfo" class="com.lec4.ex.MyInfo">
+									<!-- 세터함수가 있어야 값 입력 가능!  -->
+		<property name="name">      <!-- 기본데이터 값 입력 -->
+			<value>박진형</value>
+		</property>	
+		<property name="height" value="177"/>
+			
+		<property name="weight" value="69"/>
+
+		<property name="hobbys">
+			<list>       <!-- 리스트타입 값 입력  -->
+				<value>bass</value>
+				<value>swimming</value>
+				<value>reading a book</value>
+			</list>
+		</property>
+				<property name="bmiCalculator">   <!-- 다른 빈 객체 참조  -->
+			<ref bean="bmiCalculator"/>
+		</property>
+	</bean>
+
+
+
+</beans>

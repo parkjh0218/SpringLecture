@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="student1" class="com.lec5_1.ex.Student"> <!-- id는 클래스의 이름과 같을 필요는 없고, 내가 만들 객체의 고유한 이름이다 -->
+		<constructor-arg>     <!-- Student 클래스의 생성자를 사용한 Student1 객체 생성 -->
+			<value>박진형</value>
+		</constructor-arg>
+		<constructor-arg>
+			<value>28살</value>
+		</constructor-arg>
+		<constructor-arg>
+			<value>3학년</value>
+		</constructor-arg>
+		<constructor-arg>
+			<value>20번</value>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="student2" class="com.lec5_1.ex.Student">
+							<!--  Student2 객체 생성  -->
+		<constructor-arg value="홍길동" />
+		<constructor-arg value="9살" />
+		<constructor-arg value="2학년" />
+		<constructor-arg value="10번" />
+	</bean>
+	
+	<bean id="studentInfo" class="com.lec5_1.ex.StudentInfo"> <!--  StudentInfo 객체 생성 - 조립 -->
+		<constructor-arg>
+			<ref bean="student1" />  <!-- StudentInfo 객체는 student1을 참조하고 있다. -->
+		</constructor-arg>
+	</bean>
+	
+</beans>
