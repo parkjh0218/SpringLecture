@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="student1" class="com.lec6_1.ex.Student">
+	<!-- 생성자를 사용한 주입, 자바클래스에서 동일한 형태의 생성자가 있어야 함-->
+		<constructor-arg value="박진형"/>	
+		<constructor-arg value="28"/>
+		<constructor-arg>
+			<list>
+				<value>bass</value>
+				<value>programming</value>
+			</list>
+		</constructor-arg>
+	
+	<!-- 세터를 사용한 주입, 자바클래스에서 동일한 변수의 세터가 있어야 함-->
+	<property name="height" value="177"></property>
+	<property name="weight" value="68"></property>
+	</bean>
+
+	<bean id="studentInfo1" class="com.lec6_1.ex.StudentInfo">
+		<property name="student" ref="student1"/>
+	</bean>
+
+
+</beans>

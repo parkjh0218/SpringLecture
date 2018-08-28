@@ -12,7 +12,7 @@ public class MainClass {
 		Pencil pencil = ctx.getBean("pencil", Pencil.class);
 		pencil.use();
 		
-		ctx.close();
+		ctx.close(); 
 		
 	}
 
